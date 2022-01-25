@@ -1,0 +1,12 @@
+## Q1
+* [problem](http://web.mit.edu/18.06/www/Spring02/probsets/ps4.pdf)
+* [answer](http://web.mit.edu/18.06/www/Spring02/probsets/ps4sol.pdf)
+## Q2
+* [problem](http://web.mit.edu/18.06/www/Spring02/probsets/ps4.pdf)
+* [answer](http://web.mit.edu/18.06/www/Spring02/probsets/ps4sol.pdf)
+## Q3
+* [problem](http://web.mit.edu/18.06/www/Spring02/probsets/ps5.pdf)
+* [answer](http://web.mit.edu/18.06/www/Spring02/probsets/ps5sol.pdf)
+## Q4
+* [problem](http://web.mit.edu/18.06/www/Spring02/probsets/ps5.pdf)
+* [answer](http://web.mit.edu/18.06/www/Spring02/probsets/ps5sol.pdf)

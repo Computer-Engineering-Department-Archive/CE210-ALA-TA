@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{exercise}
+\usepackage{xepersian}
+\settextfont{B Nazanin}
+
+\renewcommand\ExerciseName{سوال~}
+\renewcommand\AnswerName{پاسخ سوال}
+\renewcommand\ExerciseHeader{%
+	\noindent\parbox[t]{.18\textwidth}{%
+		\bfseries\large\ExerciseName\ExerciseHeaderNB\hfill}%
+	\parbox[t]{.72\textwidth}{%
+		\centering\bfseries\large%
+		\ExerciseHeaderTitle\ExerciseHeaderOrigin}%
+	\par\medskip
+}
+
+\begin{document}
+	\begin{Exercise*}
+		فرض کنید $A$ یک ماتریس $3*3$ باشد و 
+		$
+			V=
+			\begin{bmatrix}
+				1\\
+				2\\
+				-1
+			\end{bmatrix}, 
+			W=
+			\begin{bmatrix}
+				2\\
+				-1\\
+				3
+			\end{bmatrix}$.\\
+		همچنین داریم $َAv=-v$ و $Aw=2w$.\\
+		مقدار 
+		$A^5\begin{bmatrix} 
+			-1 \\ 
+			8 \\ 
+			-9 
+		\end{bmatrix}$ 
+	را بیابید.
+		
+	\end{Exercise*}
+	\begin{Answer}
+	- از آنجا که اطلاعات داده شده فقط برحسب $v$ و $w$ است، پس ما ابتدا 
+		$\begin{bmatrix} 
+			-1 \\ 
+			8 \\ 
+			-9 
+		\end{bmatrix}$
+	را برحسب ترکیب خطی‌ای از $v$ و $w$ بدست می‌آوریم:\\
+	\begin{flushleft}
+	$\begin{bmatrix} 
+		1 \\ 
+		8 \\ 
+		-9 
+	\end{bmatrix}=a\mathbf{v}+b\mathbf{w}$\\
+	\end{flushleft}\\
+ماتریس افزونه آن به شکل زیر خواهد بود:
+	\begin{flushleft}
+		\begin{align*} 
+			\left[\begin{array}{rr|r} 
+				1 & 2 & -1 \\ 
+				2 &-1 &8 \\ 
+				-1 & 3 & -9 
+			\end{array}\right]
+			\xrightarrow[R_3+R_1]{R_2-2R_1} 
+			\left[\begin{array}{rr|r} 
+				1 & 2 & -1 \\ 
+				0 &-5 &10 \\ 
+				0 & 5 & -10 
+			\end{array}\right]
+			\xrightarrow{-\frac{1}{5}R_2}\\[6pt]
+			\left[\begin{array}{rr|r} 
+				1 & 2 & -1 \\ 
+				0 &1 &-2 \\ 
+				0 & 5 & -10 
+			\end{array}\right]
+			\xrightarrow[R_3-R_2]{R_1-2R_2} 
+			\left[\begin{array}{rr|r} 
+				1 & 0 & 3 \\ 
+				0 &1 &-2 \\ 
+				0 & 0 & 0 
+			\end{array}\right]. 
+		\end{align*}
+	\end{flushleft}\\
+	پس $a=3$ و $b=-2$ است و 
+	$\begin{bmatrix} 
+		-1 \\ 
+		8 \\ 
+		9 
+	\end{bmatrix}=3\mathbf{v}-2\mathbf{w}$.\\
+حال باید مقدار زیر را محاسبه کنیم:
+	\begin{align*} 
+		A^5\begin{bmatrix} 
+			-1 \\ 
+			8 \\ 
+			9 
+		\end{bmatrix}&=A^5(3\mathbf{v}-2\mathbf{w})=3A^5\mathbf{v}-2A^5\mathbf{w} \tag{*} 
+	\end{align*}\\
+طبق فرض می‌دانیم $Av=-v$ و با تکرار آن داریم $A^5\mathbf{v}=(-1)^5\mathbf{v}=-\mathbf{v}$ .\\
+به طور مشابه با استفاده از $Aw=2w$ داریم $A^5\mathbf{w}=2^5\mathbf{w}=32\mathbf{w}$ .\\	
+با جایگذاری این دو در معادله $(*)$ خواهیم داشت:
+	\begin{leftflush}
+	\begin{align*} 
+		A^5\begin{bmatrix} 
+			-1 \\ 
+			8 \\ 
+			9 
+		\end{bmatrix}&=3(-\mathbf{v})-2(32\mathbf{w})\\[6pt]
+		&=-3\begin{bmatrix} 
+			1 \\ 
+			2 \\ 
+			-1 
+		\end{bmatrix}-64\begin{bmatrix} 
+			2 \\ 
+			-1 \\ 
+			3 
+		\end{bmatrix}\\[6pt]
+		&=\begin{bmatrix} 
+			-3-128 \\ 
+			-6+64 \\ 
+			3-192 
+		\end{bmatrix} 
+		=\begin{bmatrix} 
+			-131 \\ 
+			58 \\ 
+			-189 
+		\end{bmatrix}. 
+	\end{align*}
+	\end{leftflush}
+	\end{Answer}
+	
+\end{document}
