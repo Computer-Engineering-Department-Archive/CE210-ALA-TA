@@ -1,0 +1,121 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+
+\input{Style}
+
+%\settextfont{Yas}
+\begin{document}
+\سربرگ{تمرین آشنایی با متلب}{}{}
+\clearpage
+\مسئله{متغیر های اسکالر}
+
+متغیر های زیر را ایجاد کنید:
+\lr{
+\begin{enumerate}
+	\item $a = 10$
+	\item $b = 1023 * 2.5$
+	\item $c = 2+3j$ \text{عدد موهومی در اعداد مختلط است}
+	\item $d = e^{j2pi}$  (use \textbf{exp}, \textbf{pi})
+\end{enumerate}
+}
+j) عدد موهومی در اعداد مختلط است)
+
+\مسئله{متغیر های برداری}
+\begin{latin}
+	\begin{enumerate}
+		\item aٰVec = [3.14 15 9 26]
+		
+		\item bVec = $\begin{bmatrix}
+			2.17 \\
+			8 \\
+			28 \\
+			182
+		\end{bmatrix}$
+		
+		\item cVec = [5 4.8 4.6  \dots  -4.8 -5] 
+		
+		(all the numbers from 5 to -5 in increments of -0.2)
+		
+		\item dVec = [$10^0$ $10^{0.01}$ $10^{0.02}$ \dots $10^{0.99}$ $10$ ] 
+		
+		(logarithmically spaced numbers between 1and 10, use \textbf{logspace}, make sure you get the length right!)
+		
+		\item eVec = Hello 
+		
+		( eVec is a string, which is a vector of characters)
+	\end{enumerate}
+\end{latin}
+
+\مسئله{متغییر های ماتریسی}
+
+\begin{latin}
+	\begin{enumerate}
+		\item
+		$
+		 aٰMat = \begin{bmatrix}
+			2  & \dots &2 \\
+			\vdots  & \ddots & \vdots \\
+			2  & \dots &2 \\
+		\end{bmatrix}
+		$ 
+		
+		(a 9x9 matrix full of 2’s (use \textbf{ones} or \textbf{zeros}))
+		\item
+		$
+		bMat = \begin{bmatrix}
+			1  & \dots &\dots &\dots &0 \\
+			\vdots  & \ddots &0&\ddots&\vdots \\
+			\vdots  & 0&5&0&\vdots\\
+			\vdots  & \ddots&0& \ddots&\vdots\\
+			0  & \dots & \dots& \dots &1 \\
+		\end{bmatrix}
+		$ 
+		
+		(a 9x9 matrix of all zeros, but with the values [1 2 3 4 5 4 3 2 1] on the main diagonal (use \textbf{zeros},\textbf{diag}).)
+		
+		\item
+		$
+		cMat = \begin{bmatrix}
+		1  & 11 &\dots &\dots &91 \\
+		2  & 12 &\ddots&\ddots&92 \\
+		\vdots  & \ddots&\ddots&\ddots&\vdots\\
+		9  & 19&\ddots& \ddots&99\\
+		10  & 20 & \dots& \dots &100 \\
+		\end{bmatrix}
+		$ 
+		
+		(a 10x10 matrix where the vector 1:100 runs down the columns (use \textbf{reshape}).)
+
+	\end{enumerate}
+\end{latin}
+\مسئله{معادلات اسکالر}
+\begin{latin}
+	\begin{enumerate}
+		\item x = {\LARGE${\frac{1}{1 + e^{-(a-15)/6}}}$}
+		\item y = $(\sqrt{a} + \sqrt[21]{b}) ^{pi}$
+	\end{enumerate}
+\end{latin}
+
+\مسئله{معادلات برداری}
+
+در این قسمت از معادلات بخش 2 و عملگرهای عنصر نهاد
+(\lr{element wise})
+ ( مثل $.*$ و $./$ و...) استفاده کنید. (برای مثال، عناصر xVec حاصل محاسبه فرمول فوق بر روی تک تک عناصر cVec هستند)
+\begin{latin}
+	\begin{enumerate}
+		\item xVec = {\LARGE${\frac{1}{\sqrt{2pi * 2.5}}}e^{{-cVec^2}/2}$}
+		\item yVec = $\sqrt{(aVec)^T + bVec^2}$
+	\end{enumerate}
+\end{latin}
+\مسئله{معادلات ماتریسی}
+
+در این قسمت از عملگرهای ماتریسی استفاده کنید.
+\begin{latin}
+	\begin{enumerate}
+		\item xMat = $(aVec * bVec) * aVec^T$
+	\end{enumerate}
+\end{latin}
+\مسئله{ماتریس ستونی ای تشکیل دهید که میانگین هر سطر cMat را در خود ذخیره کند. همچنین میانگین کلی ماتریس را نیز پیدا کرده و در متغیری ذخیره و نمایش دهید. (‌از تابع \textbf{mean} استفاده کنید)}
+
+\end{document}

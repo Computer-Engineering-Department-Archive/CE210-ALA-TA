@@ -1,0 +1,147 @@
+\usepackage{graphicx,comment,framed}
+\usepackage{roundbox}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{framed}
+\usepackage{amsthm,amssymb,amsmath}
+%\usepackage[colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
+\definecolor{shadecolor}{cmyk}{0,0,0,0}
+\usepackage{listings}
+\usepackage{xepersian}
+\usepackage[noend]{algpseudocode}
+
+
+%--------------------- page settings ----------------------
+
+\settextfont[Scale=1.1]{XB_Niloofar.ttf}
+\setdigitfont[Scale=1.1]{XB_Niloofar.ttf}
+\defpersianfont\sayeh[Scale=1.1]{XB_Niloofar.ttf}
+\addtolength{\textheight}{3.2cm}
+\addtolength{\topmargin}{-22mm}
+\addtolength{\textwidth}{3cm}
+\addtolength{\oddsidemargin}{-1.5cm}
+
+
+%------------------------ Environments ------------------------------------
+
+\newtheorem{قضیه}{قضیه}
+\newtheorem{لم}{لم}
+\newtheorem{مشاهده}{مشاهده}
+\newtheorem{تعریف}{تعریف}
+
+
+%-------------------------- Notations ------------------------------------
+
+\newcommand{\IR}{\ensuremath{\mathbb{R}}} 
+\newcommand{\IZ}{\ensuremath{\mathbb{Z}}} 
+\newcommand{\IN}{\ensuremath{\mathbb{N}}} 
+\newcommand{\IS}{\ensuremath{\mathbb{S}}} 
+\newcommand{\IC}{\ensuremath{\mathbb{C}}} 
+\newcommand{\IB}{\ensuremath{\mathbb{B}}} 
+
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\rM}{\mathrm{M}}
+\newcommand{\rC}{\mathrm{C}}
+\newcommand{\rV}{\mathrm{V}}
+
+\newcommand{\lee}{\leqslant}
+\newcommand{\gee}{\geqslant}
+\newcommand{\ceil}[1]{{\left\lceil{#1}\right\rceil}}
+\newcommand{\floor}[1]{{\left\lfloor{#1}\right\rfloor}}
+\newcommand{\prob}[1]{{\mbox{\tt Pr}[#1]}}
+\newcommand{\set}[1]{{\{ #1 \}}}
+\newcommand{\seq}[1]{{\left< #1 \right>}}
+\newcommand{\provided}{\,|\,}
+\newcommand{\poly}{\mbox{\rm poly}}
+\newcommand{\polylog}{\mbox{\rm \scriptsize polylog}\,}
+\newcommand{\comb}[2] {\left(\!\!\begin{array}{c}{#1}\\{#2}\end{array}\!\!\right)}
+
+
+
+
+\newcounter{probcnt}
+\newcommand{\مسئله}[1]{\stepcounter{probcnt}\bigskip\bigskip{
+ 	\large \bf مسئله‌ی \arabic{probcnt}$\mbox{\bf{.}}$ \ #1} \bigskip}
+
+\newcommand{\fqed}[1]{\leavevmode\unskip\nobreak\quad\hspace*{\fill}{\ensuremath{#1}}}
+
+\newenvironment{اثبات}
+	{\begin{trivlist}\item[\hskip\labelsep{\em اثبات.}]}
+	{\fqed{\square}\end{trivlist}}
+
+\newenvironment{حل}
+	{\begin{trivlist}\item[\hskip\labelsep{\bf حل.}]}
+	{\fqed{\blacktriangleright}\end{trivlist}}
+
+\ifdefined\hidesols
+	\newsavebox{\trashcan} % uncomment the following line to hide solutions
+	\renewenvironment{حل}{\begin{latin}\begin{lrbox}{\trashcan}}{\end{lrbox}\end{latin}}
+\fi
+
+
+%------------------------- Header -----------------------------
+
+\newcommand{\سربرگ}[3]{
+\parindent=0em
+\begin{shaded}
+
+\rightline{ 
+\makebox[6em][c]{
+\includegraphics[height=1.6cm]{aut.png}
+}}
+\vspace{-.2em}
+{\scriptsize\bf دانشکده‌ی مهندسی کامپیوتر}
+\hfill {\small
+مدرس: دکتر امیرمزلقانی  \ 
+}\\[-5em]
+\leftline{\hfill\Large\bf 
+کاربرد های جبر خطی
+}\\[.7em]
+\leftline{\hfill\bf 
+نیم‌سال دوم ۹۶-۹۷
+}\\[1.7em]
+\hrule height .12em
+
+\normalsize
+\vspace{1mm} #1
+\hfill \small  #3
+\vspace{1mm} 
+\hrule height .1em
+
+\vspace{-0.5em} 
+\hfill {\sayeh\large #2} \hfill
+\end{shaded}
+\begin{large}
+
+توجه:
+\end{large}
+\\
+\\
+\begin{itemize}
+\item
+این تمرین از مباحث مربوط به فصل دوم (جبر ماترسی) طراحی شده است که شامل ۴ مساله و یک تمرین شبیه سازی می باشد.
+
+\item 
+کلاس تدریسیار هفته بعد از موعد تحویل مربوط به رفع مشکلات این تمرین است. تا زمان کلاس سوالات خود را از طریق ایمیل زیر بپرسید.
+\begin{latin}
+\href{mailto:aut.la2018@gmail.com}{\[aut.la2018@gmail.com\]}
+\end{latin}
+\item
+مساله ها را در یک فایل pdf و فایل کد های مربوط به تمرین های شبیه سازی و گزارش های آنها را به طور مجزا در یک پوشه قرار دهید.
+
+\item پاسخ های تمرین را در قالب یک فایل به صورت الگوی زیر آپلود کنید.
+\begin{latin}
+9531000\_Gabriel\_Batistuta\_HW2.zip
+\end{latin}
+\item \color{red}
+مهلت تحویل جمعه 25 اسفند 1396 ساعت 23:54
+\end{itemize}
+
+}
+
+
